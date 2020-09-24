@@ -8,7 +8,7 @@ print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
 while True:
 
-    timer = input(">>> ")
+    timer = input(">>> 00:10:10")
     split_timer = timer.split(":")
     int_list = []
     for e in split_timer:
@@ -25,7 +25,12 @@ while True:
 
     elif len(timer) == 4 or len(timer) == 5:
         for q in range(int_list[0] * 60 + int_list[1], 0, -1):
-            print(q)
+            print(time.strftime('%H:%M:%S', time.gmtime(q)))
+            total_sec = 4000
+            total_min = 4000 % 60
+            total_sec2 = 4000 / 60
+            total_hour = total_min / 60
+
             time.sleep(1)
         print("Time's Up!")
         print("")
