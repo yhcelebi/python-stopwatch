@@ -1,1 +1,1 @@
-print("10" + "1")
+print("13".split())

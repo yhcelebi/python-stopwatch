@@ -1,54 +1,84 @@
 import time
-import datetime
 
+# TODO-1: ask the scope outside to for loop
 
-class Stopwatch:
-    @staticmethod
-    def stopwatch():
+print("")
+print(f"Today's Date: {time.ctime()}")
+print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-        global stopwatch_format
-        stopwatch_format = "stopwatch format yy:mm:dd:hh:mm:ss"
+while True:
 
-        global times_up
-        times_up = "Time's Up!"
+    timer = input(">>> ")
+    split_timer = timer.split(":")
+    int_list = []
+    for e in split_timer:
+        a = int(e)
+        int_list.append(a)
 
+    if len(timer) == 1 or len(timer) == 2:
+        for q in range(int(timer), 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
         print("")
-        print(f"Today's Date: {time.ctime()}")
-        print(stopwatch_format)
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-        while (True):
+    elif len(timer) == 4 or len(timer) == 5:
+        for q in range(int_list[0] * 60 + int_list[1], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-            stopwatch = input(">>> ")
-            split_stopwatch = stopwatch.split(":")
+    elif len(timer) == 7 or len(timer) == 8:
+        for q in range(int_list[0] * 60 + int_list[1] * 60 + int_list[2], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-            if len(stopwatch) == 1 or len(stopwatch) == 2:
-                for q in range(int(stopwatch), 0, -1):
-                    print(q)
-                    time.sleep(1)
-                    continue
-                    print(times_up)
-                    print("")
-                    print(stopwatch_format)
+    elif len(timer) == 10 or len(timer) == 11:
+        for q in range(int_list[0] * 24 + int_list[1] * 60 + int_list[2] * 60 + int_list[3], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-            elif len(stopwatch) == 4 or len(stopwatch) == 5 or len(stopwatch) == 6:
-                for q in range(int((split_stopwatch[0] * 60) + split_stopwatch[1]), 0, -1):
-                    step = []
-                    step.append(q)
-                    print(f"{q[0]}:{q[1]}{q[2]}")
-                    time.sleep(1)
-                    continue
-                    print(times_up)
-                    print("")
-                    print(stopwatch_format)
+    elif len(timer) == 13 or len(timer) == 14:
+        for q in range(int_list[0] * 7 + int_list[1] * 24 + int_list[2] * 60 + int_list[3] * 60 + int_list[4], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-            elif stopwatch == "quit":
-                quit()
+    elif len(timer) == 16 or len(timer) == 17:
+        for q in range(int_list[0] * 4 + int_list[1] * 7 + int_list[2] * 24 + int_list[3] * 60 + int_list[4] * 60 + int_list[5], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
-            else:
-                print("")
-                print(stopwatch_format)
-                continue
+    elif len(timer) == 19 or len(timer) == 20:
+        for q in range(int_list[0] * 365 + 6 + int_list[3] * 24 + int_list[4] * 60 + int_list[5] * 60 + int_list[6], 0, -1):
+            print(q)
+            time.sleep(1)
+        print("Time's Up!")
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
 
+    elif timer == "help":
+        print("type it don't be scared")
 
+    elif timer == "quit":
+        quit()
 
-Stopwatch.stopwatch()
+    else:
+        print("")
+        print("stopwatch format yy:mm:ww:dd:hh:mm:ss")
+        print("please enter a valid value")
+        continue
